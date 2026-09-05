@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: v4
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/traffic_risk_v4?currentSchema=production}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: production
+    show-sql: false
+
+server:
+  port: ${PORT:8080}
+
+ml:
+  artifacts-dir: ${ML_ARTIFACTS_DIR:ml_artifacts}
+
+weather:
+  api-key: ${WEATHER_API_KEY}
+
+routing:
+  tmap:
+    app-key: ${TMAP_APP_KEY:}
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:8501}
