@@ -1,0 +1,33 @@
+# 실제 값이 들어간 application.yml은 절대 커밋하지 마세요.
+# 이 파일을 복사해 application.yml로 만들고, 값만 채운 뒤 로컬에서 쓰세요.
+spring:
+  application:
+    name: v4
+  datasource:
+    url: jdbc:postgresql://localhost:5432/traffic_risk_v4?currentSchema=production
+    username: postgres
+    password: 여기에_비밀번호
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: production
+    show-sql: false
+
+server:
+  port: 8080
+
+ml:
+  artifacts-dir: ml_artifacts
+
+weather:
+  api-key: 여기에_OpenWeatherMap_키
+
+routing:
+  tmap:
+    app-key: 여기에_티맵_키
+
+cors:
+  allowed-origins: http://localhost:8501

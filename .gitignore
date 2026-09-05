@@ -1,0 +1,13 @@
+# Spring Boot
+v4/target/
+v4/src/main/resources/application.yml
+*.class
+
+# Python / Streamlit
+frontend/venv/
+frontend/__pycache__/
+frontend/.streamlit/secrets.toml
+
+# ê¸°í?
+.env
+*.log
