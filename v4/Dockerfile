@@ -9,10 +9,11 @@ RUN ./mvnw clean package -DskipTests
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
-# xgboost4j가 필요로 하는 OpenMP 런타임 설치
 RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /app/target/*.jar app.jar
+COPY --from=builder /app/ml_artifacts ./ml_artifacts
+
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
