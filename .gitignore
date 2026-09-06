@@ -10,3 +10,4 @@ frontend/.streamlit/secrets.toml
 # 기�?
 .env
 *.log
+v4/env.yaml
